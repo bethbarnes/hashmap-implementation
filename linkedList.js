@@ -2,7 +2,8 @@
 // If there is a collision, the new data will be added to the beginning of the linked list.
 
 class Node {
-  constructor(val){
+  constructor(key, val){
+    this.key = key
     this.val = val
     this.next = null
   }
@@ -13,12 +14,12 @@ class LinkedList {
     this.head = null
   }
 
-  addNode(val){
-    let newNode = new Node(val)
+  addLLNode(key, val){
+    let newNode = new Node(key, val)
 
-    if (this.head === null) {
+    if(this.head === null) {
       this.head = newNode
-    } else {
+    }else {
       let previousHead = this.head
       this.head = newNode
       newNode.next = previousHead
