@@ -1,4 +1,5 @@
-//Implementing singly linked list to store data at a each hash. If there is a collision, the new data will be added to the beginning of the linked list.
+// Implementing singly linked list to store data at a each hash.
+// If there is a collision, the new data will be added to the beginning of the linked list.
 
 function Node(val){
   this.val = val
