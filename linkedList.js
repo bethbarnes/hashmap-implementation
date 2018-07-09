@@ -1,9 +1,11 @@
 // Implementing singly linked list to store data at a each hash.
 // If there is a collision, the new data will be added to the beginning of the linked list.
 
-function Node(val){
-  this.val = val
-  this.next = null
+class Node {
+  constructor(val){
+    this.val = val
+    this.next = null
+  }
 }
 
 class LinkedList {
