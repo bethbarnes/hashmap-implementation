@@ -19,7 +19,7 @@ class LinkedList {
 
     if(this.head === null) {
       this.head = newNode
-    }else {
+    } else {
       let previousHead = this.head
       this.head = newNode
       newNode.next = previousHead
