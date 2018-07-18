@@ -4,7 +4,7 @@ from linkedlist import Linked_List
 
 #---------SOLUTION----------#
 
-#initializing hash map
+#define Hash Map class
 class Hash_Map:
   hash_length = 26
   hash_arr = [None] * hash_length
@@ -19,6 +19,7 @@ class Hash_Map:
 #add key and value to hash map
   def add_to_hash(self, key, val):
     hash_num = self.hash(key)
+    #handle collisions
     if self.hash_arr[hash_num] is None :
       self.hash_arr[hash_num] = Linked_List()
     self.hash_arr[hash_num].add_LL_node(key, val)
@@ -43,6 +44,11 @@ def main():
     inventory_hash.look_up('apple')
   except KeyError as e:
     assert e.args[0] == 'key (apple) not found'
+
+  print('test - can hash strings and numbers as keys')
+
+  assert inventory_hash.hash('pineapple') == 8
+  assert inventory_hash.hash(267) == 24
 
   print('test - adds key and value to hash map, can lookup keys')
 
