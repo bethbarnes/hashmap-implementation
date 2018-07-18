@@ -23,8 +23,7 @@ class HashMap {
       this.hashArr[hash].addLLNode(key, val)
     }
   }
-//very simple hashing function, will replace
-//maybe assume it's a string or number
+
   hash(val){
     return val.charCodeAt(0)%this.hashLength
   }
