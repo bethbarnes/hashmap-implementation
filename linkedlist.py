@@ -29,7 +29,7 @@ class Linked_List:
       if curr_node.key == key:
         return curr_node.val
       curr_node = curr_node.next_node
-    raise KeyError('key not found')
+    raise KeyError(f'key ({key}) not found')
 
 
 #--------TESTS--------#
@@ -67,6 +67,11 @@ def main():
   assert my_LL.find_node('Jane') == 24
 
   print('test - throws error if key not found in Linked List')
+
+  try:
+    my_LL.find_node('Monica')
+  except KeyError as e:
+    assert e.args[0] == 'key (Monica) not found'
 
 if __name__ == '__main__':
   main()
